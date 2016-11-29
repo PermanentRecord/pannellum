@@ -760,6 +760,7 @@ function onDocumentTouchStart(event) {
     onPointerDownYaw = config.yaw;
     onPointerDownPitch = config.pitch;
 
+    fireEvent('touchstart', event);
     animateInit();
 }
 
@@ -820,6 +821,8 @@ function onDocumentTouchEnd() {
     }
     onPointerDownPointerDist = -1;
     latestInteraction = Date.now();
+
+    fireEvent('touchend', event);
 }
 
 var pointerIDs = [],
